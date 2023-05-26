@@ -1,0 +1,376 @@
+﻿<Window x:Class="Desktop_01_3990.View.AddStudentView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop_01_3990.View" 
+        xmlns:vm1="clr-namespace:Desktop_01_3990.ViewModel" 
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="{Binding Title,UpdateSourceTrigger=PropertyChanged}" 
+        Height="700" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent">
+    <Window.DataContext>
+        <vm1:AddEditStudentVM/>
+    </Window.DataContext>
+    <Border Style="{StaticResource border}" BorderThickness="8"
+            CornerRadius="30" Background="#fff"
+            MouseDown="Border_MouseDown">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                            Style="{StaticResource border}">
+                        <StackPanel Orientation="Horizontal">
+                            
+                            <TextBlock Text="{Binding Firstname,UpdateSourceTrigger=PropertyChanged}" 
+                                       Foreground="Black"
+                                       FontSize="20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            
+                            <TextBlock Text=" 's" 
+                                       Foreground="Black"
+                                       FontSize="20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+
+                            <TextBlock Text=" ID:" 
+                                       Foreground="Black"
+                                       FontSize="20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            
+                            <TextBlock Text="{Binding StudentID,UpdateSourceTrigger=PropertyChanged}"
+                                       Foreground="Black"
+                                       FontSize="20"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="1">
+                        <Grid>
+                            <!--Top Button-->
+                            <Button x:Name="btnClose" ToolTip="Close"
+                        Style="{StaticResource topButton}" Margin="0 0 20 0"
+                        Background="#dcdcdc" HorizontalAlignment="Right" 
+                        Click="btnClose_Click">
+                                <Icon:PackIconMaterial Kind="Close"/>
+                            </Button>
+
+                            <Button Style="{StaticResource topButton}" Margin="0 0 55 0"
+                        ToolTip="Resize" Click="Button_Resize_Click"
+                        Background="#dcdcdc" HorizontalAlignment="Right">
+                                <Icon:PackIconMaterial Kind="Resize" />
+                            </Button>
+
+                            <Button Style="{StaticResource topButton}" Margin="0 0 90 0"
+                        ToolTip="Minimize"
+                        Background="#dcdcdc" HorizontalAlignment="Right"
+                        Click="Button_Minimize_Click">
+                                <Icon:PackIconMaterial Kind="WindowMinimize" />
+                            </Button>
+                        </Grid>
+                    </Border>
+                    
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Style="{StaticResource border}" Padding="0">
+                <Grid>
+                    <TextBlock FontSize="25"
+                           TextAlignment="Center" FontWeight="bold"
+                               FontFamily="Source Serif Pro Black" 
+                           FontStretch="Medium"
+                           Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" 
+                           HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                           Width="200"/>
+                </Grid>
+            </Border>
+
+
+            <Border Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Margin="5"
+                            Background="#8d1294"
+                        CornerRadius="0 50 0 30">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="3.*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.Row="0" Margin="0 40 0 0"
+                                    Style="{StaticResource border}">
+                                <Grid>
+                                    <TextBlock Text="{Binding FullName}"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               FontSize="20"
+                                               TextWrapping="Wrap"
+                                               Foreground="#ffffff"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="1"
+                                Width="215" Height="215"
+                                Padding="3" Background="white"
+                                CornerRadius="0 100 100 100"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Margin="0 0 0 0">
+                                <Ellipse>
+                                <Ellipse.Fill>
+                                    <ImageBrush 
+                                        ImageSource="{Binding SelectedImage, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+
+                            
+                            <Border Grid.Row="2">
+                                <Button 
+                                Style="{StaticResource menuButton}"
+                                VerticalAlignment="Bottom" DockPanel.Dock="Bottom"
+                                Margin="15 0 15 20" Click="btnClose_Click">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="Logout"
+                                                           Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="LogOut"/>
+                                    </StackPanel>
+                                </Button>
+                            </Border>
+                           
+                         
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="1">
+                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Grid.Column="0" 
+                                    Style="{StaticResource border}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0" Height="30" HorizontalAlignment="Left">
+                                        <TextBlock Text="Student ID:"/>
+                                    </Grid>
+
+                                    <Grid Grid.Row="1"  Height="30">
+                                        <TextBlock Text="Date of Birth:" />
+                                    </Grid>
+
+                                    <Grid Grid.Row="2"  Height="30">
+                                        <TextBlock Text="First Name:"/>
+                                    </Grid>
+
+                                    <Grid Grid.Row="3"  Height="30">
+                                        <TextBlock Text="Last Name:" />
+                                    </Grid>
+
+                                    <Grid Grid.Row="4"  Height="30">
+                                        <TextBlock Text="Age:" />
+                                    </Grid>
+
+                                    <Grid Grid.Row="5"  Height="30">
+                                        <TextBlock Text="GPA"/>
+                                    </Grid>
+
+                                    <Grid Grid.Row="6"  Height="30">
+                                        <TextBlock Text="Gender"/>
+                                    </Grid>
+
+                                    <Grid Grid.Row="7"  Height="30">
+                                        <TextBlock Text="Semester" />
+                                    </Grid>
+
+                                    <Grid Grid.Row="8"  Height="30">
+                                        <TextBlock Text="Department"/>
+
+                                    </Grid>
+
+                                    <Grid Grid.Row="9"  Height="30">
+                                        <Button Content="insert picture" 
+                                                Width="100" 
+                                                VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                Style="{StaticResource addButton}"
+                                                Command="{Binding UploadPhotoCommand}"/>
+                                    </Grid>
+
+                                    <Grid Grid.Row="10"  Height="30">
+
+                                    </Grid>
+                                </Grid>
+
+                            </Border>
+
+                            <Border Grid.Column="1" 
+                                    CornerRadius="20 20 30 20"
+                                    Style="{StaticResource border}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+
+                                    <Grid Grid.Row="0" Height="30">
+                                        <TextBox Text="{Binding StudentID, 
+                                    UpdateSourceTrigger=PropertyChanged}" />
+                                     
+                                    </Grid>
+
+                                    <Grid Grid.Row="1"  Height="30">
+                                        <DatePicker SelectedDate="{Binding DateOfBirthDMY,
+                                    UpdateSourceTrigger=PropertyChanged, 
+                                    Mode=TwoWay}" />
+                                    </Grid>
+
+                                    <Grid Grid.Row="2" Height="30">
+                                        <TextBox Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" 
+                                       />
+                                    </Grid>
+
+                                    <Grid Grid.Row="3" Height="30">
+                                        <TextBox Text="{Binding Lastname, UpdateSourceTrigger=PropertyChanged}" />
+                                    </Grid>
+
+                                    <Grid Grid.Row="4" Height="30">
+                                        <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" />
+                                    </Grid>
+
+                                    <Grid Grid.Row="5" Height="30">
+                                        <TextBox Text="{Binding Gpa, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Grid>
+
+                                    <Grid Grid.Row="6" Height="30">
+                                        <ComboBox 
+                                          ItemsSource="{Binding GenderOptions}" 
+                                          SelectedValue="{Binding Gender}">
+
+                                        </ComboBox>
+                                    </Grid>
+
+                                    <Grid Grid.Row="7" Height="30">
+                                        <ComboBox ItemsSource="{Binding Semesters}"
+                                          SelectedItem="{Binding Semester}">
+
+                                        </ComboBox>
+                                    </Grid>
+
+                                    <Grid Grid.Row="8" Height="30">
+                                        <ComboBox ItemsSource="{Binding Departments}"
+                                          SelectedItem="{Binding Department}">
+
+                                        </ComboBox>
+                                    </Grid>
+
+                                    <Grid Grid.Row="9" Height="30">
+                                        <Button Content="Save" Command="{Binding SaveCommand}"  
+                                                VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                Style="{StaticResource addButton}"/>
+
+                                    </Grid>
+
+                                    <Grid Grid.Row="10" Height="30">
+
+                                    </Grid>
+                                </Grid>
+
+                            </Border>
+
+
+
+
+
+
+
+
+
+
+
+                            <!--<TextBlock Text="DateOfBirth:" Margin="5" Grid.Row="1"/>
+            <TextBox Text="{Binding Dateofbirth, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="1" Grid.Column="1"/>-->
+
+
+                            <!--<TextBox Text="{Binding Gender, UpdateSourceTrigger=PropertyChanged}" />-->
+
+                            <!--<TextBox Text="{Binding Semester, UpdateSourceTrigger=PropertyChanged}"/>-->
+
+                            <!--<TextBox Text="{Binding Department, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="1" Grid.Column="1"/>-->
+
+
+
+
+                            <!-- Department ComboBox -->
+
+
+                            <!-- Modules ComboBox -->
+                            <!--
+                <ComboBox ItemsSource="{Binding Modules}"
+                  SelectedItem="{Binding SelectedModule}"
+                  Margin="10"
+                  Width="150">
+                </ComboBox>-->
+
+
+
+                        </Grid>
+
+                    </Border>
+
+                </Grid>
+            </Border>
+
+
+
+
+
+        </Grid>
+    </Border>
+   
+</Window>

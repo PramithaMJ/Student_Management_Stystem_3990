@@ -1,0 +1,138 @@
+﻿<Window x:Class="Desktop_01_3990.View.Help_featuresView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop_01_3990.View" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="Help_featuresView" 
+        Height="500" Width="700"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent">
+    <Border Background="#eff2f7" CornerRadius="30"
+            MouseDown="Border_MouseDown" 
+            MouseLeftButtonDown="Border_MouseLeftButtonDown"
+            Style="{StaticResource border}" BorderThickness="8"
+            >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.Row="0" >
+                <Grid >
+                    <!--Top Button-->
+                    <Button x:Name="btnClose" ToolTip="Close"
+                            Style="{StaticResource topButton}" Margin="0 0 0 0"
+                            Background="#dcdcdc" HorizontalAlignment="Right" 
+                            Click="btnCloseClick">
+                        <Icon:PackIconMaterial Kind="Close"/>
+                    </Button>
+
+                    <Button Style="{StaticResource topButton}" Margin="0 0 35 0"
+                            ToolTip="Resize" Click="Button_Resize_Click"
+                            Background="#dcdcdc" HorizontalAlignment="Right">
+                        <Icon:PackIconMaterial Kind="Resize" />
+                    </Button>
+
+                    <Button Style="{StaticResource topButton}" Margin="0 0 75 0"
+                            ToolTip="Minimize"
+                            Background="#dcdcdc" HorizontalAlignment="Right"
+                            Click="Button_Minimize_Click">
+                        <Icon:PackIconMaterial Kind="WindowMinimize" />
+                    </Button>
+                </Grid>
+
+            </Border>
+            <Border Grid.Row="1" BorderThickness="3"
+                    Margin="5" CornerRadius="30" BorderBrush="DarkMagenta">
+                <TextBlock Text="Welcome to the Help and Features Window! "
+                           FontSize="20"
+                           TextAlignment="Center" FontWeight="bold"
+                               FontFamily="Source Serif Pro Black" 
+                           FontStretch="Medium"
+                           HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                           Width="auto"/>
+            </Border>
+
+            <Border Grid.Row="2">
+                <Grid>
+
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap" FontSize="15">
+                            <TextBlock.Inlines>
+                                <Bold>
+                                    <Underline>1. Maximizing the Window:</Underline>
+                                </Bold>
+                                <LineBreak />
+                                Simply click on the window three times in rapid succession to maximize the application window to full screen.
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="15">
+                            <TextBlock.Inlines>
+                                <Bold>
+                                    <Underline>2. Pop-up Window for Student Details:</Underline>
+                                </Bold>
+                                <LineBreak />
+                                Perform a double click on the corresponding student row in the main window to view all details of the selected student. This action will trigger a pop-up window displaying comprehensive information.
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="15">
+                            <TextBlock.Inlines>
+                                <Bold>
+                                    <Underline>3. Searching for Students:</Underline>
+                                </Bold>
+                                <LineBreak />
+                                Take advantage of the search bar located in the main window to search for specific students. Enter the relevant keywords or details you wish to search for, and the application will filter and display the matching results accordingly.
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="15">
+                            <TextBlock.Inlines>
+                                <Bold>
+                                    <Underline>4. Sorting Student Details:</Underline>
+                                </Bold>
+                                <LineBreak />
+                                In the main window, you can sort the student table by clicking on the headers of each column. For example, if you want to sort the students by their names, click on the "Name" header. Similarly, you can sort the students by other attributes such as ID, age, or grade by clicking on the respective column headers.
+                            </TextBlock.Inlines>
+                        </TextBlock>
+
+                        <Border Width="80" Height="30"
+                                Margin="0 0 0 -10" HorizontalAlignment="Right"
+                            Background="DarkMagenta" CornerRadius="20">
+                            <Button 
+                                Style="{StaticResource menuButton}"
+                                VerticalAlignment="Bottom" Margin="0"
+                                HorizontalAlignment="Center"
+                                DockPanel.Dock="Bottom"
+                                 Click="btnClose_Click">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="ExitToApp"
+                                                           Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Exit"/>
+                                </StackPanel>
+                            </Button>
+                        </Border>
+                    </StackPanel>
+
+
+
+
+
+
+                </Grid>
+
+            </Border>
+
+
+        </Grid>
+
+
+    </Border>
+
+</Window>
