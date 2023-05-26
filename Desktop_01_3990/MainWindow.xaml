@@ -30,6 +30,7 @@
             </Grid.ColumnDefinitions>
 
             <!--Left Menu-->
+            
             <Grid>
 
                 <Grid.RowDefinitions>
