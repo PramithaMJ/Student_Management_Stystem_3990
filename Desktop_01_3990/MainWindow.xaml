@@ -30,20 +30,12 @@
             </Grid.ColumnDefinitions>
 
             <!--Left Menu-->
-            
-            <Grid>
 
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-
-                <!--Menu Icon-->
-                <!--<Button Style="{StaticResource topButton}"
-                        Margin="20 28 0 35">
-                    <Icon:PackIconMaterial Kind="Menu"
-                                           Width="15" Height="15"/>
-                </Button>-->
 
                 <Border Grid.Row="1" Background="#8d1294"
                         CornerRadius="0 50 0 30">
@@ -58,7 +50,7 @@
                             <Ellipse>
                                 <Ellipse.Fill>
                                     <ImageBrush ImageSource="{Binding SelectedStudent.Image}"/>
-                              
+
                                 </Ellipse.Fill>
                             </Ellipse>
                         </Border>
@@ -93,7 +85,7 @@
                                     <Icon:PackIconMaterial Kind="HomeVariant"
                                                            Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock Text="Student Detail Window"/>
-                                    
+
                                 </StackPanel>
                             </Button>
 
@@ -108,7 +100,7 @@
 
                             <Button Style="{StaticResource menuButton}"
                                     Command="{Binding AddStudentCommand}">
-                               
+
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="AccountMultiple"
                                                            Style="{StaticResource menuButtonIcon}"
@@ -136,20 +128,20 @@
                             </Button>
 
                         </StackPanel>
-                        
+
                         <Border>
                             <Button Style="{StaticResource menuButton}"
                                 VerticalAlignment="Bottom" DockPanel.Dock="Bottom"
                                 Margin="15 0 15 20" Command="{Binding LogoutCommand}">
 
-                            <StackPanel Orientation="Horizontal">
-                                <Icon:PackIconMaterial Kind="Logout"
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Logout"
                                                            Style="{StaticResource menuButtonIcon}"/>
-                                <TextBlock Text="LogOut"/>
-                            </StackPanel>
-                        </Button>
+                                    <TextBlock Text="LogOut"/>
+                                </StackPanel>
+                            </Button>
                         </Border>
-                        
+
 
                     </DockPanel>
                 </Border>
@@ -220,9 +212,9 @@
                            Foreground="#121518"
                            />
                 </Border>
-                
 
-             
+
+
 
                 <!--Seperator-->
                 <Separator Height="1" Grid.Row="3" Background="#dae2ea"
@@ -274,17 +266,17 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" CornerRadius="30">
-                        <Grid  Grid.Row="4" >     
+                        <Grid  Grid.Row="4" >
                             <!--Counter title-->
-                             <TextBlock Text="Added student detail list" 
+                            <TextBlock Text="Added student detail list" 
                                         FontSize="20" 
                                         FontWeight="SemiBold" Margin="10"
                                         Foreground="#121518" HorizontalAlignment="Center"
                                         VerticalAlignment="Center"/>
-                    </Grid>
+                        </Grid>
                     </Border>
-                    
-                     
+
+
 
                     <Grid Grid.Column="1">
                         <!--Add Button-->
@@ -299,9 +291,9 @@
                             </Button>
                         </Grid>
                     </Grid>
-                    
+
                 </Grid>
-         
+
 
 
                 <DataGrid Name="StudentsDatagrid"
@@ -353,7 +345,7 @@
                                             Width="*" 
                                             Binding="{Binding StudentID,UpdateSourceTrigger=PropertyChanged}" 
                                             IsReadOnly="True"/>
-                
+
                         <DataGridTextColumn Header="First Name" 
                                             Width="80" 
                                             Binding="{Binding FirstName,UpdateSourceTrigger=PropertyChanged}" 
@@ -382,16 +374,8 @@
                                             IsReadOnly="True"/>
 
                     </DataGrid.Columns>
-
-
                 </DataGrid>
-
-                
-
             </Grid>
         </Grid>
-
-
     </Border>
-    
 </Window>

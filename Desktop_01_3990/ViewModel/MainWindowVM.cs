@@ -18,7 +18,7 @@ namespace Desktop_01_3990.ViewModel
         [ObservableProperty]
         public ObservableCollection<Student> students;
 
-        
+
 
         [ObservableProperty]
         public Student selectedStudent = null;
@@ -41,14 +41,14 @@ namespace Desktop_01_3990.ViewModel
         [RelayCommand]
         public void AddStudent()
         {
-            var vm = new AddEditStudentVM();
-            vm.title = "ADD STUDENT ";
-            AddStudentView window = new AddStudentView(vm);
+            var Avm = new AddEditStudentVM();
+            Avm.title = "ADD STUDENT ";
+            AddStudentView window = new AddStudentView(Avm);
             window.ShowDialog();
 
-            if (vm.Student1 != null && vm.Student1.FirstName != null)
+            if (Avm.Student1 != null && Avm.Student1.FirstName != null)
             {
-                students.Add(vm.Student1);
+                students.Add(Avm.Student1);
             }
         }
 
@@ -76,25 +76,23 @@ namespace Desktop_01_3990.ViewModel
         {
             if (selectedStudent != null)
             {
-                var vm = new AddEditStudentVM(selectedStudent);
-               
-                vm.title = "EDIT STUDENT";
-                var window = new AddStudentView(vm);
-               
+                var Avm = new AddEditStudentVM(selectedStudent);
+
+                Avm.title = "EDIT STUDENT";
+                var window = new AddStudentView(Avm);
 
                 window.ShowDialog();
 
-
                 int index = students.IndexOf(selectedStudent);
                 students.RemoveAt(index);
-                students.Insert(index, vm.Student1);
+                students.Insert(index, Avm.Student1);
 
 
 
             }
             else
             {
-                MessageBox.Show("Please Select the student", "Warning!");
+                MessageBox.Show("Please Select Student", "Warning!");
             }
         }
 
@@ -102,13 +100,17 @@ namespace Desktop_01_3990.ViewModel
         {
             students = new ObservableCollection<Student>();
             BitmapImage image1 = new BitmapImage(new Uri("/Model/Images/1.png", UriKind.Relative));
-            students.Add(new Student("EG/2020/3990", 12, "Amali", "Rathnayaka", "Female", 2.45, 3, image1, new DateOnly(1999, 11, 12), "Elecrical"));
+            students.Add(new Student("EG/2020/3990", 12, "Amali", "Rathnayaka", "Female", 2.45, 3, image1, "1999/05/21", "Elecrical"));
             BitmapImage image2 = new BitmapImage(new Uri("/Model/Images/2.png", UriKind.Relative));
-            students.Add(new Student("EG/2021/3985", 12, "Pramitha", "Jaysooriya", "Male", 3.25, 2, image2, new DateOnly(2000, 1, 31), "Computer"));
+            students.Add(new Student("EG/2021/3985", 12, "Pramitha", "Jaysooriya", "Male", 3.25, 2, image2, "2000/01/31", "Computer"));
             BitmapImage image3 = new BitmapImage(new Uri("/Model/Images/3.png", UriKind.Relative));
-            students.Add(new Student("EG/2018/2892", 12, "Kamal", "Ruwan", "Male", 2.48, 8, image3, new DateOnly(1998, 5, 21), "Mechanical"));
+            students.Add(new Student("EG/2018/2892", 12, "Kamal", "Ruwan", "Male", 2.48, 8, image3, "1998/05/21", "Mechanical"));
             BitmapImage image4 = new BitmapImage(new Uri("/Model/Images/4.png", UriKind.Relative));
-            students.Add(new Student("EG/2021/7845", 12, "Kasuni", "Kalhara", "FeMale", 3.2, 1, image4, new DateOnly(1999, 2, 24), "Civil and Environment"));
+            students.Add(new Student("EG/2021/7845", 12, "Kasuni", "Kalhara", "Female", 3.2, 1, image4, "1999/02/24", "Civil and Environment"));
+            BitmapImage image5 = new BitmapImage(new Uri("/Model/Images/5.png", UriKind.Relative));
+            students.Add(new Student("EG/2020/3818", 12, "Samal", "Rasindu", "Male", 3.8, 1, image5, "1998/5/12", "Mechanical"));
+            BitmapImage image6 = new BitmapImage(new Uri("/Model/Images/6.png", UriKind.Relative));
+            students.Add(new Student("EG/2019/3201", 12, "Nimali", "Rajmanya", "Female", 2.8, 1, image6, "2001/03/22", "Computer"));
         }
 
         [RelayCommand]

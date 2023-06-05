@@ -97,7 +97,7 @@
                                     <Underline>4. Sorting Student Details:</Underline>
                                 </Bold>
                                 <LineBreak />
-                                In the main window, you can sort the student table by clicking on the headers of each column. For example, if you want to sort the students by their names, click on the "Name" header. Similarly, you can sort the students by other attributes such as ID, age, or grade by clicking on the respective column headers.
+                                In the main window, you can sort the student table by clicking on the headers of each column. For example, if you want to sort the students by their StudentID, click on the "StudentID" header. Similarly, you can sort the students by other attributes such as First Name,Last Name, Age, Gender,Department,Semeste,ect... by clicking on the respective column headers.
                             </TextBlock.Inlines>
                         </TextBlock>
 

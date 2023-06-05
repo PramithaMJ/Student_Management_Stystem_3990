@@ -25,6 +25,7 @@ namespace Desktop_01_3990.View
             InitializeComponent();
             DataContext = new DetailsWindowViewVM();
             DataContext = student;
+       
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

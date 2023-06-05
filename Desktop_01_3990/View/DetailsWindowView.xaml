@@ -217,46 +217,41 @@
 
 
                                             <Grid Grid.Row="0" Height="30">
-                                                <TextBlock Text="{Binding StudentID}" 
+                                                <TextBlock Text="{Binding StudentID,UpdateSourceTrigger=PropertyChanged}" 
                                                />
 
                                             </Grid>
 
                                             <Grid Grid.Row="1"  Height="30">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="11*"/>
-                                                    <ColumnDefinition Width="38*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <TextBlock  Grid.ColumnSpan="2" />
-
+                                                <TextBlock Text="{Binding Firstname,UpdateSourceTrigger=PropertyChanged}" />
                                             </Grid>
 
                                             <Grid Grid.Row="2" Height="30">
-                                                <TextBlock  />
+                                                <TextBlock  Text="{Binding Lastname,UpdateSourceTrigger=PropertyChanged}"/>
                                             </Grid>
 
                                             <Grid Grid.Row="3" Height="30">
-                                                <TextBlock />
+                                                <TextBlock Text="{Binding DateOfBirthDMY,UpdateSourceTrigger=PropertyChanged}" />
                                             </Grid>
 
                                             <Grid Grid.Row="4" Height="30">
-                                                <TextBlock Text="{Binding Age}" />
+                                                <TextBlock Text="{Binding Age,UpdateSourceTrigger=PropertyChanged}" />
                                             </Grid>
 
                                             <Grid Grid.Row="5" Height="30">
-                                                <TextBlock  />
+                                                <TextBlock Text="{Binding Gpa,UpdateSourceTrigger=PropertyChanged}" />
                                             </Grid>
 
                                             <Grid Grid.Row="6" Height="30">
-                                                <TextBlock Text="{Binding Gender}" />
+                                                <TextBlock Text="{Binding Gender,UpdateSourceTrigger=PropertyChanged}" />
                                             </Grid>
 
                                             <Grid Grid.Row="7" Height="30">
-                                                <TextBlock Text="{Binding Semester}" />
+                                                <TextBlock Text="{Binding Semester,UpdateSourceTrigger=PropertyChanged}" />
                                             </Grid>
 
                                             <Grid Grid.Row="8" Height="30">
-                                                <TextBlock Text="{Binding Department}" />
+                                                <TextBlock Text="{Binding Department,UpdateSourceTrigger=PropertyChanged}" />
                                             </Grid>
 
                                             <Grid Grid.Row="9" Height="30">

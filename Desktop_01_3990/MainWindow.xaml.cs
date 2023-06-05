@@ -77,8 +77,13 @@ namespace Desktop_01_3990
 
                 detailsWindow.Show();
 
-
             }
+        }
+        private Student GetSelectedStudent()
+        {
+            // Replace this with your own logic to fetch the selected student
+            // For demonstration purposes, returning a sample student object
+            return new Student("123", 20, "John", "Doe", "Male", 3.5, 2, null, default, "Computer Science");
         }
 
         private void searchTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -94,13 +99,27 @@ namespace Desktop_01_3990
                 {
                     Student student2 = item as Student;
                     return (student2 != null) &&
-                           (student2.StudentID.Contains(searchText) ||
+                           (student2.StudentID.ToLower().Contains(searchText) ||
+                            student2.FirstName.ToLower().Contains(searchText) ||
+                            student2.LastName.ToLower().Contains(searchText) ||
+                            student2.Age.ToString().ToLower().Contains(searchText) ||
+                            student2.DateOfBirthDMY.ToString().ToLower().Contains(searchText) ||
+                            student2.Department.ToString().ToLower().Contains(searchText) ||
+                            student2.GPA.ToString().ToLower().Contains(searchText)||
+                            student2.StudentID.ToUpper().Contains(searchText) ||
+                            student2.FirstName.ToUpper().Contains(searchText) ||
+                            student2.LastName.ToUpper().Contains(searchText) ||
+                            student2.Age.ToString().ToUpper().Contains(searchText) ||
+                            student2.DateOfBirthDMY.ToString().ToUpper().Contains(searchText) ||
+                            student2.Department.ToString().ToUpper().Contains(searchText) ||
+                            student2.GPA.ToString().ToUpper().Contains(searchText))||
+                            student2.StudentID.Contains(searchText) ||
                             student2.FirstName.Contains(searchText) ||
                             student2.LastName.Contains(searchText) ||
                             student2.Age.ToString().Contains(searchText) ||
                             student2.DateOfBirthDMY.ToString().Contains(searchText) ||
                             student2.Department.ToString().Contains(searchText) ||
-                            student2.GPA.ToString().Contains(searchText));
+                            student2.GPA.ToString().Contains(searchText);
                 };
 
                 searchPlaceholderTextBlock.Visibility = Visibility.Collapsed;
@@ -111,8 +130,6 @@ namespace Desktop_01_3990
                 searchPlaceholderTextBlock.Visibility = Visibility.Visible;
             }
         }
-
-
         private void Button_Minimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
