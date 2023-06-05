@@ -226,11 +226,17 @@
                                     </Grid>
 
                                     <Grid Grid.Row="9"  Height="30">
-                                        <Button Content="insert picture" 
-                                                Width="100" 
+                                        <Button Width="120" ToolTip="Upload Student Photo"
                                                 VerticalAlignment="Center" HorizontalAlignment="Center"
                                                 Style="{StaticResource addButton}"
-                                                Command="{Binding UploadPhotoCommand}"/>
+                                                Command="{Binding UploadPhotoCommand}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Icon:PackIconMaterial Kind="Upload" VerticalAlignment="Center"
+                                               Width="11" Height="11"
+                                               Margin="0 1 5 0"/>
+                                                <TextBlock Text="Upload picture"/>
+                                            </StackPanel>
+                                        </Button>
                                     </Grid>
 
                                     <Grid Grid.Row="10"  Height="30">
@@ -284,7 +290,7 @@
                                     </Grid>
 
                                     <Grid Grid.Row="5" Height="30">
-                                        <TextBox Text="{Binding Gpa, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBox Text="{Binding GPA, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
 
                                     <Grid Grid.Row="6" Height="30">
@@ -310,14 +316,24 @@
                                     </Grid>
 
                                     <Grid Grid.Row="9" Height="30">
-                                        <Button Content="Save" Command="{Binding SaveCommand}"  
+                                        <Button Command="{Binding SaveCommand}"  
                                                 VerticalAlignment="Center" HorizontalAlignment="Center"
-                                                Style="{StaticResource addButton}"/>
+                                                Style="{StaticResource addButton}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Icon:PackIconMaterial Kind="ContentSave" VerticalAlignment="Center"
+                                               Width="11" Height="11"
+                                               Margin="0 1 8 0"/>
+                                                <TextBlock Text="SAVE"/>
+                                            </StackPanel>
+                                        </Button>
 
                                     </Grid>
 
                                     <Grid Grid.Row="10" Height="30">
+                                        <!--<ComboBox ItemsSource="{Binding PopulateModulesCommand}"
+                                          SelectedItem="{Binding Modules}">
 
+                                        </ComboBox>-->
                                     </Grid>
                                 </Grid>
 
@@ -365,10 +381,6 @@
 
                 </Grid>
             </Border>
-
-
-
-
 
         </Grid>
     </Border>

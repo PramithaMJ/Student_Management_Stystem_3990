@@ -64,10 +64,6 @@
                                Text="Student Details" 
                               />
 
-
-
-
-
                     </Grid>
 
                 </Border>
@@ -223,11 +219,12 @@
                                             </Grid>
 
                                             <Grid Grid.Row="1"  Height="30">
-                                                <TextBlock Text="{Binding Firstname,UpdateSourceTrigger=PropertyChanged}" />
+                                                <TextBlock Text="{Binding FirstName,UpdateSourceTrigger=PropertyChanged}" />
+
                                             </Grid>
 
                                             <Grid Grid.Row="2" Height="30">
-                                                <TextBlock  Text="{Binding Lastname,UpdateSourceTrigger=PropertyChanged}"/>
+                                                <TextBlock  Text="{Binding LastName,UpdateSourceTrigger=PropertyChanged}"/>
                                             </Grid>
 
                                             <Grid Grid.Row="3" Height="30">
@@ -239,7 +236,7 @@
                                             </Grid>
 
                                             <Grid Grid.Row="5" Height="30">
-                                                <TextBlock Text="{Binding Gpa,UpdateSourceTrigger=PropertyChanged}" />
+                                                <TextBlock Text="{Binding GPA,UpdateSourceTrigger=PropertyChanged}" />
                                             </Grid>
 
                                             <Grid Grid.Row="6" Height="30">

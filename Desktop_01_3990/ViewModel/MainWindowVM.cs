@@ -18,8 +18,6 @@ namespace Desktop_01_3990.ViewModel
         [ObservableProperty]
         public ObservableCollection<Student> students;
 
-
-
         [ObservableProperty]
         public Student selectedStudent = null;
 
@@ -28,27 +26,24 @@ namespace Desktop_01_3990.ViewModel
             Application.Current.MainWindow.Close();
         }
 
-
-
-
         [RelayCommand]
         public void messsage()
         {
 
-            MessageBox.Show($"{selectedStudent.FirstName} GPA value must be between 0 and 4.", "Error");
+            MessageBox.Show($"{selectedStudent.FirstName} GPA value must be between 0 and 4.", "Error!!!");
         }
 
         [RelayCommand]
         public void AddStudent()
         {
-            var Avm = new AddEditStudentVM();
-            Avm.title = "ADD STUDENT ";
-            AddStudentView window = new AddStudentView(Avm);
+            var AddVm = new AddEditStudentVM();
+            AddVm.title = "ADD STUDENT ";
+            AddStudentView window = new AddStudentView(AddVm);
             window.ShowDialog();
 
-            if (Avm.Student1 != null && Avm.Student1.FirstName != null)
+            if (AddVm.Student1 != null && AddVm.Student1.FirstName != null)
             {
-                students.Add(Avm.Student1);
+                students.Add(AddVm.Student1);
             }
         }
 
@@ -60,14 +55,12 @@ namespace Desktop_01_3990.ViewModel
             {
                 string name = selectedStudent.FirstName;
                 students.Remove(selectedStudent);
-                MessageBox.Show($"{name} is Deleted successfuly!!!.", "DELETED \a ");
+                MessageBox.Show($"{name} is Deleted successfuly!!!.", "DELETED! \a ");
 
             }
             else
             {
                 MessageBox.Show("Plese Select Student before Delete.", "Error");
-
-
             }
         }
 
@@ -76,18 +69,16 @@ namespace Desktop_01_3990.ViewModel
         {
             if (selectedStudent != null)
             {
-                var Avm = new AddEditStudentVM(selectedStudent);
+                var AEvm = new AddEditStudentVM(selectedStudent);
 
-                Avm.title = "EDIT STUDENT";
-                var window = new AddStudentView(Avm);
+                AEvm.title = "EDIT STUDENT";
+                var window = new AddStudentView(AEvm);
 
                 window.ShowDialog();
 
                 int index = students.IndexOf(selectedStudent);
                 students.RemoveAt(index);
-                students.Insert(index, Avm.Student1);
-
-
+                students.Insert(index, AEvm.Student1);
 
             }
             else

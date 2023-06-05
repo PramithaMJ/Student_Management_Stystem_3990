@@ -31,7 +31,7 @@ namespace Desktop_01_3990.Model
         }
 
         public int Semester { get; set; }
-      //  public DateTime DateOfBirthDMY { get;  set; }
+   
   
         public Student(string studentID, int age, string firstName, string lastName, string gender, double gpa, int semester, BitmapImage image, string dateOfBirthDMY, string department)
         {

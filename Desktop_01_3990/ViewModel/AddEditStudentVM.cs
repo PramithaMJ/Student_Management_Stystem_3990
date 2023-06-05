@@ -38,7 +38,7 @@ namespace Desktop_01_3990.ViewModel
         public int age;
 
         [ObservableProperty]
-        public double gpa;
+        public double gPA;
 
         [ObservableProperty]
         public string gender;
@@ -68,6 +68,7 @@ namespace Desktop_01_3990.ViewModel
         [ObservableProperty]
         private ObservableCollection<string> modules;
 
+        
         public string FullName
         {
             get{
@@ -113,7 +114,7 @@ namespace Desktop_01_3990.ViewModel
             firstname = Student1.FirstName;
             lastname = Student1.LastName;
             age = Student1.Age;
-            gpa = Student1.GPA;
+            gPA = Student1.GPA;
             gender = Student1.Gender ;
             semester = Student1.Semester; ;
             dateOfBirthDMY = Student1.DateOfBirthDMY;
@@ -149,7 +150,7 @@ namespace Desktop_01_3990.ViewModel
         {
            
 
-            if (gpa <= 0 || gpa >= 4)
+            if (gPA <= 0 || gPA >= 4)
             {
                 MessageBox.Show("GPA value must be between 0 and 4.", "Error");
                 return;
@@ -167,7 +168,7 @@ namespace Desktop_01_3990.ViewModel
                     Age = age,
                     Gender = gender,
                     Image = selectedImage,
-                    GPA = gpa,
+                    GPA = gPA,
                     DateOfBirthDMY = dateOfBirthDMY,
                     Department = department
                 };
@@ -180,7 +181,7 @@ namespace Desktop_01_3990.ViewModel
                 Student1.FirstName = firstname;
                 Student1.LastName = lastname;
                 Student1.Age = age;
-                Student1.GPA = gpa;
+                Student1.GPA = gPA;
                 Student1.Gender = gender;
                 Student1.Image = selectedImage;            
                 Student1.DateOfBirthDMY = dateOfBirthDMY;
