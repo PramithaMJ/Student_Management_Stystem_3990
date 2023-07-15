@@ -24,16 +24,16 @@ This is a Student Management System developed using WPF (Windows Presentation Fo
 ## Main Window Photo
 ![Main Window](https://github.com/PramithaMJ/Desktop_01_3990/assets/123730262/88d996c8-8cb2-4a94-b6ee-e890a169e637)
 
-##Add Student Window Photo
+## Add Student Window Photo
 ![Add Student View](https://github.com/PramithaMJ/Desktop_01_3990/assets/123730262/6d548fbf-b4d4-4a77-ae14-c41a9cb599b5)
 
-##Edit Student Window Photo
+## Edit Student Window Photo
 ![Edit Student View](https://github.com/PramithaMJ/Desktop_01_3990/assets/123730262/12c201f6-2f3f-4197-8efe-b8c098bf1630)
 
-##Search window Photo
+## Search window Photo
 ![Search](https://github.com/PramithaMJ/Desktop_01_3990/assets/123730262/7558759a-1278-4210-8a86-7fc5173d8360)
 
-##Help and Feature Window Photo
+## Help and Feature Window Photo
 ![App Feature Window](https://github.com/PramithaMJ/Desktop_01_3990/assets/123730262/e26e2169-b13f-4bad-b473-429d9480f479)
 
 
