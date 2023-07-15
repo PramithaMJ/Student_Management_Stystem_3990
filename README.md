@@ -18,6 +18,8 @@ This is a Student Management System developed using WPF (Windows Presentation Fo
 
 - WPF (Windows Presentation Foundation): Used to build the desktop application's user interface
 - C#: Programming language for the backend logic and data manipulation
+- MVVM (Model-View-ViewModel): Architecture pattern used to separate concerns and provide a clear separation between UI, business logic, and data.
+- CommunityToolkit: A collection of helper functions, controls, and services for WPF applications that enhances development productivity and provides additional UI controls.
 
 ## Login Window Photo
 ![Login Window](https://github.com/PramithaMJ/Desktop_01_3990/assets/123730262/e2a32cae-304b-4a4f-98bd-490fcc547096)
