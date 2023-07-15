@@ -1,6 +1,7 @@
 # Desktop_01_3990
 GUI Induvidual Project 
-REG. No. EG/2020/3990
+ReG. No. EG/2020/3990
+Name. Jayasooriya L.P.M.
 
 # Student Management System
 
