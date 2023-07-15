@@ -73,9 +73,12 @@ namespace Desktop_01_3990.ViewModel
         [ObservableProperty]
         private ObservableCollection<string> modules;
 
+        public Student Student1 { get; private set; }
+        public Action CloseAction { get; internal set; }
 
 
-        
+
+
         public string FullName
         {
             get{
@@ -155,14 +158,8 @@ namespace Desktop_01_3990.ViewModel
             }
         }
 
+       
 
-
-
-
-
-
-        public Student Student1 { get; private set; }
-        public Action CloseAction { get; internal set; }
 
         [RelayCommand]
         public void Save()
