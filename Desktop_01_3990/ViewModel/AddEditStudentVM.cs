@@ -88,23 +88,22 @@ namespace Desktop_01_3990.ViewModel
             modules.Clear();
 
             // Add modules based on semester and department
-            if (semester == 1 && department == "Electrical Engineering")
+            if (semester == 3 && department == "Electrical Engineering")
             {
                 modules.Add("Module 1");
                 modules.Add("Module 2");
                 modules.Add("Module 3");
-                // Add more modules as needed
+                
             }
 
-            else if (semester == 2 && department == "Computer Engineering")
+            else if (semester == 4 && department == "Computer Engineering")
             {
                 modules.Add("Module 4");
                 modules.Add("Module 5");
                 modules.Add("Module 6");
-                // Add more modules as needed
+                
             }
-            // Add more conditions for other semesters and departments
-
+           
             // Clear the selected module
             SelectedModule = null;
         }
@@ -149,9 +148,9 @@ namespace Desktop_01_3990.ViewModel
         [RelayCommand]
         public void Save()
         {
-            if (gpa < 0 || gpa > 4)
+            if (gpa < 0.0 || gpa > 4.0)
             {
-                MessageBox.Show("GPA value must be between 0 and 4.", "Error");
+                MessageBox.Show("GPA value must be between 0 and 4.", "GPA Error");
                 return;
             }
             if (Student1 == null)

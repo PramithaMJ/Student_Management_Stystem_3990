@@ -241,16 +241,16 @@
                     </Button>
 
 
-                    <Button Style="{StaticResource crudButton}"
+                    <!--<Button Style="{StaticResource crudButton}"
                                     Command="{Binding AddStudentCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Icon:PackIconMaterial Kind="AccountMultiple"
                              Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Add"/>
                         </StackPanel>
-                    </Button>
+                    </Button>-->
 
-                    <Button Style="{StaticResource crudButton}" 
+                    <!--<Button Style="{StaticResource crudButton}" 
                             Command="{Binding EditStudentCommandCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Icon:PackIconMaterial Kind="ForumOutline"
@@ -266,7 +266,7 @@
                                                    Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Delete"/>
                         </StackPanel>
-                    </Button>
+                    </Button>-->
                 </StackPanel>
                 <Grid Grid.Row="4" Margin="10">
                     <Grid.ColumnDefinitions>
