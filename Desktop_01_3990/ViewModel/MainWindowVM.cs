@@ -18,8 +18,6 @@ namespace Desktop_01_3990.ViewModel
         [ObservableProperty]
         public ObservableCollection<Student> students;
 
-        
-
         [ObservableProperty]
         public Student selectedStudent = null;
 
@@ -27,9 +25,6 @@ namespace Desktop_01_3990.ViewModel
         {
             Application.Current.MainWindow.Close();
         }
-
-
-
 
         [RelayCommand]
         public void messsage()
@@ -52,7 +47,6 @@ namespace Desktop_01_3990.ViewModel
             }
         }
 
-
         [RelayCommand]
         public void Delete()
         {
@@ -61,13 +55,10 @@ namespace Desktop_01_3990.ViewModel
                 string name = selectedStudent.FirstName;
                 students.Remove(selectedStudent);
                 MessageBox.Show($"{name} is Deleted successfuly!!!.", "DELETED \a ");
-
             }
             else
             {
                 MessageBox.Show("Plese Select Student before Delete.", "Error");
-
-
             }
         }
 
@@ -81,16 +72,11 @@ namespace Desktop_01_3990.ViewModel
                 vm.title = "EDIT STUDENT";
                 var window = new AddStudentView(vm);
                
-
                 window.ShowDialog();
-
 
                 int index = students.IndexOf(selectedStudent);
                 students.RemoveAt(index);
                 students.Insert(index, vm.Student1);
-
-
-
             }
             else
             {

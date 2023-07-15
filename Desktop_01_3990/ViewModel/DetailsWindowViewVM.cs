@@ -15,7 +15,5 @@ namespace Desktop_01_3990.ViewModel
      
         public string firstname;
 
-
-
     }
 }

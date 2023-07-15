@@ -34,8 +34,6 @@ namespace Desktop_01_3990.ViewModel
         [NotifyPropertyChangedFor(nameof(FullName))]
         public string lastname;
 
- 
-
         [ObservableProperty]
         public int age;
 
@@ -77,8 +75,6 @@ namespace Desktop_01_3990.ViewModel
         public Action CloseAction { get; internal set; }
 
 
-
-
         public string FullName
         {
             get{
@@ -113,9 +109,6 @@ namespace Desktop_01_3990.ViewModel
             SelectedModule = null;
         }
 
-
-
-
         public AddEditStudentVM(Student u)
         {
             Student1 = u;
@@ -128,12 +121,10 @@ namespace Desktop_01_3990.ViewModel
             gpa = Student1.GPA;
             gender = Student1.Gender ;
             semester = Student1.Semester; ;
-          dateOfBirthDMY = Student1.DateOfBirthDMY;
+            dateOfBirthDMY = Student1.DateOfBirthDMY;
            // dateofbirth = Student1.DateOfBirth;
             selectedImage = Student1.Image;
             department = Student1.Department;
-            
-
         }
 
         public AddEditStudentVM()
@@ -142,9 +133,6 @@ namespace Desktop_01_3990.ViewModel
             PopulateModules();
         }
 
-
-
-        //get image 
         [RelayCommand]
         public void UploadPhoto()
         {
@@ -158,14 +146,9 @@ namespace Desktop_01_3990.ViewModel
             }
         }
 
-       
-
-
         [RelayCommand]
         public void Save()
         {
-           
-
             if (gpa < 0 || gpa > 4)
             {
                 MessageBox.Show("GPA value must be between 0 and 4.", "Error");
@@ -188,9 +171,7 @@ namespace Desktop_01_3990.ViewModel
                    DateOfBirthDMY = dateOfBirthDMY,
                     Department = department
                 };
-
             }
-
             else
             {
                 Student1.Semester = semester;
@@ -201,22 +182,16 @@ namespace Desktop_01_3990.ViewModel
                // Student1.DateOfBirth = dateofbirth;
                 Student1.Gender = gender;
                 Student1.Image = selectedImage;
-            
+
                 Student1.DateOfBirthDMY = dateOfBirthDMY;
                 Student1.Department = department;
-
-
             }
-
             if (Student1.FirstName != null)
             {
 
                 CloseAction();
             }
             Application.Current.MainWindow.Show();
-
-
         }
-      
     }
 }
