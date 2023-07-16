@@ -27,7 +27,7 @@ This is a Student Management System developed using WPF (Windows Presentation Fo
 - MVVM (Model-View-ViewModel): Architecture pattern used to separate concerns and provide a clear separation between UI, business logic, and data.
 - CommunityToolkit: A collection of helper functions, controls, and services for WPF applications that enhances development productivity and provides additional UI controls.
 
-##ScreenShots
+## ScreenShots
 
 ## Login Window Photo
 ![Login Window](https://github.com/PramithaMJ/Student_Management_Stystem_3990/assets/123730262/1952d16a-2f1d-40ad-97c0-406e479f63bd)
